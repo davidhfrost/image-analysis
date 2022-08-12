@@ -1,0 +1,13 @@
+P1.x = 0.25;
+P1.y = 0.25;
+P1.vals = [0.1 0.5 0.2];
+P2.x = 0.8;
+P2.y = 0.1;
+P2.vals = [0.4 0.1 0.3];
+P3.x = 0.6;
+P3.y = 0.8;
+P3.vals = [0.9 0.2 0.0];
+pixels = [P1 P2 P3];
+[j_opt, s_opt, min_error] = OptimalSplitRegression(pixels);
+bottom_pixels = pixels([pixels.y] <= s_opt);
+top_pixels = pixels([pixels.y] > s_opt);
